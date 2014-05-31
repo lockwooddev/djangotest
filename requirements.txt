@@ -13,3 +13,9 @@ mock==1.0.1
 fabric==1.8.3
 
 psycopg2==2.5.1
+
+dj-database-url==0.3.0
+dj-static==0.0.5
+gunicorn==18.0
+static==0.4
+wsgiref==0.1.2

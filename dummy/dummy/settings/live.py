@@ -5,25 +5,20 @@ import os
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = [u'']
+ALLOWED_HOSTS = [u'*']
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'lockwood',
-        'USER': 'lockwood',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-TEMPLATE_DIRS = (
-    os.path.join(DJANGO_DIR, 'templates'),
-)
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
+
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 STATICFILES_DIRS = (
-    os.path.normpath(os.path.join(DJANGO_DIR, 'static')),
+    os.path.normpath(os.path.join(BASE_DIR, 'static')),
 )
 
 LOGGING = {

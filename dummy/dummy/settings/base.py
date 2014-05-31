@@ -1,6 +1,7 @@
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+DJANGO_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'fk!_u^5*yhmgv1vgo9v!6)wc7+)v82)%q@0@kc92vd&tu(kp$%'
