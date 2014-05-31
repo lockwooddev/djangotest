@@ -15,11 +15,6 @@ urlpatterns = patterns('',
     url(r'^', NumbersView.as_view(), name='numbers'),
 )
 
-urlpatterns += patterns('',
-    (r'^static/(?P<path>.*)$',
-        'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-)
-
 if settings.DEBUG and getattr(settings, 'MEDIA_FROM_TESTSERVER', False):
     urlpatterns += patterns('',
         url(
