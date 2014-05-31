@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/numbers.css">
+{% endblock %}
+
+{% block main %}
+    <div id='content-wrapper'>
+
+        <div id="form-wrapper">
+            <form method="post" id="numberform">
+                {% csrf_token %}
+
+                <div id="input-wrapper">
+                    {{ form.numbers }}
+                    <input id="submit" type="button" value="Send" />
+                </div>
+            </form>
+        </div>
+
+        <div id="results-wrapper">
+            <h2>Sorted numbers</h2>
+            <p>
+                submit comma separated numbers and get them back sorted
+            </p>
+
+            <img id="spinner" src="{{ STATIC_URL }}img/ajax-loader.gif" />
+            <p id="errors"></p>
+            <ul id="result"></ul>
+            <a href="{% url 'logout' %}"><p>Logout</p></a>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+
+            $(document).ajaxStart(function(){
+                $("#spinner").show();
+                $("#result").empty();
+            }).ajaxStop(function(){
+                $("#spinner").hide();
+            });
+
+            function validateNumbers() {
+                var numbers = $("#id_numbers").val();
+                if (numbers) {
+                    $("#errors").empty();
+                    return true
+                }
+                $("#result").empty();
+                $("#errors").html("Cannot submit empty values");
+                return false;
+            }
+
+            $("#submit").click(function() {
+                if (validateNumbers()) {
+                    $.ajax({
+                        type: 'POST',
+                        url: "/numbers/",
+                        data: '&numbers=' + $('input[name=numbers]').val() + '&csrfmiddlewaretoken=' + $('input[name=csrfmiddlewaretoken]').val(),
+                        success: function(data){
+                            numbers = data['numbers']
+                            for (var i = 0; i < numbers.length; i++) {
+                                $("<li>"+numbers[i]+"</li>").appendTo("#result");
+                            };
+
+                            // clear number field
+                            $("#id_numbers").val("");
+                        }
+                    });
+                }
+            });
+        });
+</script>
+{% endblock %}

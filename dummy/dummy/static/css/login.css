@@ -1,0 +1,85 @@
+h2 {
+    color: rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 32px;
+    padding: 16px 16px;
+    margin: 0px;
+    text-align: center;
+}
+
+#login-wrapper {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    margin-top: 48px;
+    width: 350px;
+
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+form {
+    padding: 0 16px;
+}
+
+form > span {
+    color: red;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+form > p {
+    padding-top: 16px;
+}
+
+form > p > input {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: #3CB371;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: "Helvetica Neue", Arial;
+    font-size: 14px;
+    font-weight: 600;
+    height: 34px;
+    width: 100%;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+label {
+    color: rgba(0, 0, 0, 0.7);
+    display: inline-block;
+    padding: 10px 0px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.field-wrapper {
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.field-wrapper > span {
+    color: red;
+    font-size: 14px;
+    font-weight: 200;
+    padding-left: 8px;
+    text-align: right;
+}
+
+.field-wrapper > input {
+    border: 1px solid #ddd;
+    color: #444;
+    font-size: 16px;
+    height: 32px;
+    padding-left: 8px;
+    width: 100%;
+}
+
+.field-wrapper > input:focus {
+    border: 1px solid #aaa;
+    outline: none;
+}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/login.css">
+{% endblock %}
+
+{% block main %}
+    <div id='login-wrapper'>
+        <h2>Login</h2>
+
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+
+            {% for error in form.non_field_errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+
+            <div class="field-wrapper">
+                <label for="id_email">Email</label>
+                {% for error in form.email.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+                {{ form.email }}
+            </div>
+            <div class="field-wrapper">
+                <label for="id_password">Password</label>
+                {% for error in form.password.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+                {{ form.password }}
+            </div>
+            <p><input type="submit" value="Login" /></p>
+        </form>
+    </div>
+{% endblock %}

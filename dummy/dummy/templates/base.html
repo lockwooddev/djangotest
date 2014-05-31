@@ -1,0 +1,19 @@
+{% load staticfiles %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %} Djangotest {% endblock %}</title>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
+        {% block styles %}{% endblock %}
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script src="{{ STATIC_URL }}js/jquery-1.11.1.min.js"></script>
+    </head>
+
+    <body>
+        {% block main %}
+        {% endblock %}
+    </body>
+</html>
