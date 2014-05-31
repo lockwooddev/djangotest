@@ -15,8 +15,6 @@ DATABASES['default'] =  dj_database_url.config()
 
 STATIC_URL = '/static/'
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
 TEMPLATE_DIRS = (
     os.path.join(DJANGO_DIR, 'templates'),
 )
