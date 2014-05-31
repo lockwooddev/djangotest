@@ -1,1 +1,1 @@
-web: gunicorn dummy/dummy/wsgi.py
+web: gunicorn dummy.wsgi
