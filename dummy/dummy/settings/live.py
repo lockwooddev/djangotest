@@ -18,8 +18,12 @@ STATIC_URL = '/static/'
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+TEMPLATE_DIRS = (
+    os.path.join(DJANGO_DIR, 'templates'),
+)
+
 STATICFILES_DIRS = (
-    os.path.normpath(os.path.join(BASE_DIR, 'static')),
+    os.path.normpath(os.path.join(DJANGO_DIR, 'static')),
 )
 
 LOGGING = {
