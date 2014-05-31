@@ -22,7 +22,7 @@ TEMPLATE_DIRS = (
 )
 
 STATICFILES_DIRS = (
-    os.path.normpath(os.path.join(DJANGO_DIR, 'static')),
+    os.path.join(DJANGO_DIR, 'static'),
 )
 
 LOGGING = {
