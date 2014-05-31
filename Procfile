@@ -1,1 +1,1 @@
-web: python dummy/manage.py collectstatic --noinput; python dummy/manage.py run_gunicorn -b 0.0.0.0:$PORT --settings=dummy.settings.live
+web: python dummy/manage.py collectstatic --noinput --settings=dummy.settings.live; python dummy/manage.py run_gunicorn -b 0.0.0.0:$PORT --settings=dummy.settings.live
