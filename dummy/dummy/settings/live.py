@@ -13,7 +13,7 @@ DATABASES = {}
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
 
-STATIC_ROOT = 'dummy/staticfiles'
+STATIC_ROOT = '/staticfiles'
 STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = (
