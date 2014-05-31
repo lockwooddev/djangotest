@@ -5,13 +5,6 @@ import os
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
-DJANGO_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
-
-WWW_HOME = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', '..'))
-WEB_ROOT = os.path.normpath(os.path.join(WWW_HOME, 'web'))
-MEDIA_ROOT = os.path.normpath(os.path.join(WEB_ROOT, 'media'))
-STATIC_ROOT = os.path.normpath(os.path.join(WEB_ROOT, 'static'))
-
 ALLOWED_HOSTS = [u'']
 
 DATABASES = {
@@ -53,7 +46,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': os.path.normpath(os.path.join(WWW_HOME, 'django.log')) ,
+            'filename': os.path.normpath(os.path.join('/tmp', 'django.log')),
             'formatter': 'simple',
         },
     },
