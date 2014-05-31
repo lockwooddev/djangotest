@@ -1,1 +1,1 @@
-web: gunicorn dummy.wsgi
+web: python manage.py run_gunicorn -b 0.0.0.0:$PORT --settings=dummy.settings.live
