@@ -24,6 +24,7 @@ INSTALLED_APPS = (
     'dummy.apps.users',
 
     'south',
+    'gunicorn',
 )
 
 MIDDLEWARE_CLASSES = (
